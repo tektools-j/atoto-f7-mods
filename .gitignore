@@ -1,0 +1,22 @@
+# Never commit vendor firmware, binaries, images, or extracted trees.
+*.bin
+*.BIN
+*.so
+*.so.*
+*.sqfs
+*.squashfs
+*.img
+*.img.*
+*.png
+*.jpg
+*.jpeg
+*.zip
+extracted/
+firmware/
+build/
+# local secrets
+*creds*
+*CREDS*
+softap.conf
+ap_info.txt
+debugnet.log
