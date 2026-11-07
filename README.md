@@ -146,6 +146,7 @@ PREREQUISITES.md          hardware, your-own-firmware, workstation + on-unit too
 PATCH.md                  dock table structure, source-id map, exact byte offsets
 REPACK.md                 unpack firmware, repack a squashfs, build a flashable image
 FLASH_AND_RECOVERY.md     how to flash, and how to recover a boot-looping/bricked unit
+IOSMIRROR_YOUTUBE.md      field note: why the iPhone YouTube app won't mirror (and what does work)
 DISCLAIMER.md             safety + legal; read first
 scripts/
   debugnet.sh             USB-stick payload: brings up the :2323 nc root shell
