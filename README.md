@@ -1,12 +1,19 @@
-# ATOTO F7 — Home-Dock Customization (reverse-engineering writeup)
+# ATOTO F7 Mods — reverse-engineering notes & tooling
 
-Reverse-engineering notes and tooling for customizing the **home-screen dock** on an
-ATOTO F7 head unit — reordering the fixed dock icons and reskinning one of them — by
-patching the UI library, validated safely in RAM before any permanent flash.
+Reverse-engineering notes and tooling for **modifying an ATOTO F7 head unit** (Sunplus
+SPHE8368, embedded Linux — *not* Android): getting a root shell, unpacking and repacking
+the firmware safely past the bootloader's chunk verification, and applying your own
+changes — all validated in RAM before any permanent flash.
+
+The flagship worked example is a **home-screen dock customization** (reorder and reskin
+the fixed dock icons by patching the UI library), but the same method — root access →
+unpack → modify a squashfs → re-sync checksums → flash — applies to other firmware mods.
+Also included are field notes on the unit's internals, such as
+[why the iPhone YouTube app won't mirror](IOSMIRROR_YOUTUBE.md).
 
 > **This repo contains only original research, offsets, and tooling. It does NOT
 > contain any ATOTO firmware, libraries, images, or the vehicle boot logo.** You apply
-> the documented patch to firmware *you already have on your own device*. See
+> the documented changes to firmware *you already have on your own device*. See
 > [DISCLAIMER.md](DISCLAIMER.md) before doing anything.
 
 ### Start here
@@ -19,7 +26,7 @@ patching the UI library, validated safely in RAM before any permanent flash.
 - **First, always:** read [DISCLAIMER.md](DISCLAIMER.md) and get a verified recovery
   image. This can brick your unit.
 
-## TL;DR
+## TL;DR — the dock mod (worked example)
 
 The dock is five fixed icons drawn by `libhome.so` (a Qt/DirectFB plugin). Each slot's
 `{id, label, icon, enabled}` lives in a small table in the library's `.bss`, populated by
