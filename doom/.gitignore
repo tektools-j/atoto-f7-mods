@@ -8,3 +8,7 @@ keepalive/mcu_keepalive
 wad/
 *.wad
 *.raw
+# The root .gitignore blocks all images (no vendor artwork). These are our own
+# photos/captures of DOOM running, so allow just this directory.
+!docs/*.jpg
+!docs/*.png
