@@ -1,0 +1,10 @@
+# build outputs
+dist/
+src/fbdoom/build/
+src/fbdoom/fbdoom
+launcher/f7doomd
+keepalive/mcu_keepalive
+# id Software data: bring your own
+wad/
+*.wad
+*.raw

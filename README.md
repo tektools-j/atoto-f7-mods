@@ -11,6 +11,9 @@ unpack → modify a squashfs → re-sync checksums → flash — applies to othe
 Also included are field notes on the unit's internals, such as
 [why the iPhone YouTube app won't mirror](IOSMIRROR_YOUTUBE.md).
 
+**New: [DOOM on the F7](doom/README.md).** Native DOOM with picture, USB keyboard, sound
+effects and music, launched from the stock UI with F12 and quitting straight back to it.
+
 > **This repo contains only original research, offsets, and tooling. It does NOT
 > contain any ATOTO firmware, libraries, images, or the vehicle boot logo.** You apply
 > the documented changes to firmware *you already have on your own device*. See
@@ -155,6 +158,7 @@ REPACK.md                 unpack firmware, repack a squashfs, build a flashable 
 FLASH_AND_RECOVERY.md     how to flash, and how to recover a boot-looping/bricked unit
 IOSMIRROR_YOUTUBE.md      field note: why the iPhone YouTube app won't mirror (and what does work)
 DISCLAIMER.md             safety + legal; read first
+doom/                     DOOM on the F7 (GPL-2.0): source, launcher, build script; see doom/README.md
 scripts/
   debugnet.sh             USB-stick payload: brings up the :2323 nc root shell
   sh.ps1                  Windows driver to send a command batch over the :2323 shell
@@ -168,6 +172,7 @@ the exact build it was derived from.
 
 ## Credits / license
 
-Original tooling and notes are MIT-licensed (see headers). ATOTO, Sunplus, and any
+Original tooling and notes are MIT-licensed (see headers), except `doom/`, which is
+GPL-2.0 because it derives from fbDOOM / Chocolate Doom (see `doom/COPYING`). ATOTO, Sunplus, and any
 vehicle-maker marks belong to their owners and nothing here is affiliated with or
 endorsed by them.
